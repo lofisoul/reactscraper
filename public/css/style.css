@@ -1,0 +1,46 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  background:#f7f7f7;
+}
+
+h1,h2,.logo {
+  font-family:'Abril Fatface', cursive;
+}
+
+a {
+  transition:color .3s ease-in-out;
+}
+
+a:hover {
+  text-decoration:none;
+}
+
+.header {
+  height:60px;
+  margin-bottom:40px;
+  border-bottom:1px solid #eee;
+  background:#fff;
+  position:relative;
+}
+
+.header a.btn {
+  position: absolute;
+  right: 15px;
+  top: 14px;
+}
+
+.header a.btn-default {
+  right:140px;
+}
+
+.header .logo {
+  font-size:40px;
+  line-height:60px;
+  color:#222;
+  opacity:.8;
+  transition: opacity .3s ease-in-out;
+}
+
+.header .logo:hover {
+  opacity:1;
+}

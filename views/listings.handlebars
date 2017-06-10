@@ -1,0 +1,52 @@
+<section class="content container">
+  <h1>The latest from La.Ga.Sta.</h1>
+  <ul class="list">
+    {{#each Articles}}
+    <li class="post">
+      <div class="main row">
+
+        <div class="post-info col-xs-8 col-sm-9">
+          <h2>
+            <a href="{{this.link}}">
+              {{this.title}}
+            </a>
+          </h2>
+          <iframe src="{{this.player}}"></iframe>
+        </div>
+        <div class="post-sidebar col-xs-4 col-sm-3">
+          <div class="post-img" style="background-image:url({{this.img}})">
+          </div>
+          <div class="post-date">{{this.date}}</div>
+            {{#unless this.saved}}
+          <form class="add-saved" action="/{{this._id}}?_method=PUT" method="POST">
+            <input type="hidden" name="saved" value="true">
+            <button class="btn btn-info" type="submit">Add to Saved</button>
+          </form>
+          {{/unless}}
+          {{#if this.saved}}
+          <form class="add-saved" action="/{{this._id}}?_method=PUT" method="POST">
+            <input type="hidden" name="saved" value="false">
+            <button class="btn btn-info" type="submit">Remove From Saved</button>
+          </form>
+          {{/if}}
+        </div>
+      <!--
+      <div class="comment">
+        <h2>Leave a comment</h2>
+        <form class="comment-form" action="/note" method="POST">
+          <div class="form-group">
+            <label>Name</label>
+            <input type="text" id="name" name="name" class="form-control">
+          </div>
+          <div class="form-group">
+            <label>Comment</label>
+            <textarea id="body" name="body"></textarea>
+          </div>
+        </form>
+      </div>
+    -->
+    </div>
+    </li>
+    {{/each}}
+  </ul>
+</section>
